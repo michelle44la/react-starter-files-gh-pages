@@ -5,8 +5,21 @@
 <!-- 🔥🔥練習開始🔥🔥 -->
 <div id="root"></div>
 <script type="text/babel">
+/*
 function App() {
+  //toLocaleDateString() 這個方法可以直接把我們的時間物件, 轉成當地常見的時間格式
   return <h1>React 我來了 <small className="text-danger">{new Date().toLocaleDateString() }</small></h1>
+}*/
+
+function App() {
+  // 標籤, HTML屬性, 內容
+  return React.createElement('h1', null, 'React 我來了', 
+    React.createElement('small', {
+      className: 'text-danger',
+      title: '時間'
+    }, new Date().toLocaleDateString()),
+    '結尾'
+  )
 }
 
 const el = document.getElementById('root');

@@ -9,16 +9,12 @@
 <!-- 表達語句：
   https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Guide/Expressions_and_Operators
 -->
-<script>
-// 表達式與陳述式的差異
-</script>
-
 
 <script type="text/babel">
 function App() {
   const data = {
     imageUrl: 'https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2352&q=80',
-    name: '卡斯伯',
+    name: 'Tom',
     description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi culpa aspernatur tempore cupiditate illo minima voluptatem blanditiis optio accusantium earum voluptate magni repellendus, ipsa dolor adipisci libero qui commodi veritatis.',
     link: 'https://www.casper.tw/'
   }
@@ -28,6 +24,12 @@ function App() {
       <h5 className="card-title">{ data.name }</h5>
       <p className="card-text">{ data.description }</p>
       <a href={data.link} target="_blank" className="btn btn-primary">Go somewhere</a>
+      <br />
+      { 1 },
+      { 0 || 1 },
+      { data.name ? data.name : 'Michelle' },
+      {/*if () {  } */}
+      { (function() { return 2 * 2 })() }
     </div>
   </div>
 }
