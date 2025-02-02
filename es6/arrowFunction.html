@@ -6,35 +6,61 @@
 <div id="root"></div>
 <script type="text/babel">
 // #1 箭頭函式改寫
-function fn(a, b) {
-  return a * b;
-}
-console.log(fn(2, 4));
+// function fn(a, b) {
+//   return a * b;
+// }
 
+// const fn = (a, b) => {
+//   return a * b;
+// }
+
+// const fn = (a, b) => a * b;
+// console.log(fn(2, 4));
+
+// 當參數只有一個時，可以把括號移除
+// const fn1 = n => n;
+// console.log(fn1(5));
+
+// 當回傳為物件時，請補上小括號
+// const fn2 = () => ({
+//   name: '小明'
+// })
+// console.log(fn2());
 
 // #2 箭頭函式的 this 變化（React Hook 寫法不太會踩到這個雷）
-// var name = '全域'
+var name = '全域'
 // const person = {
 //   name: '小明',
 //   callName: function () { 
 //     console.log('1', this.name); // 1 小明
 //     setTimeout(function () {
-//       console.log('2', this.name); // 2
-//       console.log('3', this); // 3
+//       console.log('2', this.name); // 2 不是用箭頭函式，會抓到全域
+//       console.log('3', this); // 3 Window
 //     }, 10);
 //   },
 // }
 // person.callName();
 
+// const person2 = {
+//   name: '小明',
+//   callName: function () { 
+//     console.log('4', this.name); // 4 小明
+//     setTimeout(() => {
+//       console.log('5', this.name); // 5 使用箭頭函式，會抓到小明
+//       console.log('6', this); // 6 person2 物件
+//     }, 10);
+//   },
+// }
+// person2.callName();
 
 
 // #3 箭頭函式在 React 的運用
-function Card() {
+const Card = () => {
   return <div className="card">
     <div className="card-body">這是一張卡片</div>
   </div>
 }
-function App() {
+const App = () => {
   return (
     <div>
       <Card></Card>
